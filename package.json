@@ -1,0 +1,31 @@
+{
+  "name": "zmesh",
+  "version": "0.0.1",
+  "description": "A mesh node network based on zmq",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:camme/zmq-mesh.git"
+  },
+  "keywords": [
+    "mesh",
+    "network",
+    "zmq"
+  ],
+  "author": "Camilo Tapia <camilo.tapia@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "zmq": "~2.6.0",
+    "evilscan": "0.0.9",
+    "commander": "~2.2.0",
+    "merge": "^1.1.2"
+  },
+  "devDependencies": {
+    "gulp-mocha": "~0.4.1",
+    "mocha": "~1.18.2",
+    "should": "^3.3.0"
+  }
+}
