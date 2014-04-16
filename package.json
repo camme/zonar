@@ -19,7 +19,9 @@
   "license": "MIT",
   "dependencies": {
     "zmq": "~2.6.0",
-    "merge": "~1.1.2"
+    "merge": "~1.1.2",
+    "slug": "^0.4.2",
+    "netmask": "^1.0.4"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
