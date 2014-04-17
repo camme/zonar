@@ -1,7 +1,7 @@
 {
-  "name": "zmesh",
-  "version": "0.0.1",
-  "description": "A mesh node network based on zmq",
+  "name": "zonar",
+  "version": "0.4.0",
+  "description": "A lightweight, super simple discovery tool for fingding and connecting your services in your network.",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
@@ -20,11 +20,12 @@
   "dependencies": {
     "zmq": "~2.6.0",
     "merge": "~1.1.2",
-    "slug": "^0.4.2",
+    "slug": "~0.4.2",
     "netmask": "^1.0.4"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
-    "should": "~3.3.0"
+    "should": "~3.3.0",
+    "commander": "~2.2.0"
   }
 }
