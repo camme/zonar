@@ -9,11 +9,16 @@ program
     .option('-x, --extrapayload [extrapayload]', 'Extr payload')
     .parse(process.argv);
 
-var options = {id: program.id, port: program.port };
+var options = {id: program.id };
 
 if (program.extrapayload) {
     options.payload = program.extrapayload;
 }
+
+if (program.port) {
+    options.port = program.port;
+}
+
 
 if (program.time) {
     options.pulseTimer = program.time;

@@ -1,6 +1,6 @@
 {
   "name": "zonar",
-  "version": "0.4.0",
+  "version": "0.4.3",
   "description": "A lightweight, super simple discovery tool for fingding and connecting your services in your network.",
   "main": "index.js",
   "scripts": {
@@ -8,20 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:camme/zmq-mesh.git"
+    "url": "git@github.com:camme/zonar.git"
   },
   "keywords": [
-    "mesh",
-    "network",
-    "zmq"
+    "discover",
+    "network"
   ],
   "author": "Camilo Tapia <camilo.tapia@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "zmq": "~2.6.0",
     "merge": "~1.1.2",
-    "slug": "~0.4.2",
-    "netmask": "^1.0.4"
+    "netmask": "^1.0.4",
+    "uuid": "^1.4.1"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
