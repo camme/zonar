@@ -1,8 +1,5 @@
 var zonar = require("../");
 var should = require("should");
-var fs = require("fs");
-var path = require('path');
-var packageInfo = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf-8')); 
 
 describe("The messagess", function() {
 
@@ -11,7 +8,7 @@ describe("The messagess", function() {
         var node = zonar.create({name: "foo", payload: "bar baq baz"}); 
         node.start(function() {
             var message = node._private.createMessage("BAR").toString();
-            message.should.be.equal('ZONAR ' + packageInfo.version + ' zon ' + node.id + ' foo ' + node.port + ' BAR 11:bar baq baz');
+            message.should.be.equal('ZONAR ' + zonar.compabilityVersion + ' zon ' + node.id + ' foo ' + node.port + ' BAR 11:bar baq baz');
             node.stop(done);
         });
 
@@ -26,7 +23,6 @@ describe("The messagess", function() {
 
             var parsedMessage = node._private.parseMessage(message, { address: "1.2.3.4" });
 
-            //parsedMessage.should.have.property('version', packageInfo.version);
             parsedMessage.should.have.property('id', node.id);
             parsedMessage.should.have.property('name', 'foo');
             parsedMessage.should.have.property('port', node.port);
