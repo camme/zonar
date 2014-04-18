@@ -18,8 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "merge": "~1.1.2",
-    "netmask": "^1.0.4",
-    "uuid": "^1.4.1"
+    "netmask": "~1.0.4"
   },
   "devDependencies": {
     "mocha": "~1.18.2",

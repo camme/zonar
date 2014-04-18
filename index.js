@@ -1,11 +1,9 @@
-var mesh = require('./lib/mesh'); 
+var zonar = require('./lib/zonar'); 
 
 if(require.main === module) {
-    mesh.init({
-        port: 5777
-    });
+    zonar.init({ id: "zonar-" + (new Date()).getTime() });
 } else {
-    module.exports = mesh;
+    module.exports = zonar;
 }
 
 
