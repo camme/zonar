@@ -1,6 +1,6 @@
 {
   "name": "zonar",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "A lightweight, super simple discovery tool for fingding and connecting your services in your network.",
   "main": "index.js",
   "scripts": {
