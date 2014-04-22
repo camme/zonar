@@ -132,9 +132,9 @@ describe("The scanner part", function() {
 
         var counter = 0;
 
-        var node1 = zonar.create({net: "test", name: "foo"}); 
-        var node2 = zonar.create({net: "test", name: "bar"}); 
-        var node3 = zonar.create({net: "test", name: "baq"}); 
+        var node1 = zonar.create({net: "test", name: "x"}); 
+        var node2 = zonar.create({net: "test", name: "y"}); 
+        var node3 = zonar.create({net: "test", name: "z"}); 
 
         var c1 = c2 = c3 = 0;
         node1.on('found', function(foundNode) { c1++; });
@@ -142,6 +142,7 @@ describe("The scanner part", function() {
         node3.on('found', function(foundNode) { c3++; });
 
         setTimeout(function runTests() {
+
             c1.should.be.equal(1);
             c2.should.be.equal(1);
             c3.should.be.equal(2);

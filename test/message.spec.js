@@ -14,7 +14,7 @@ describe("The messagess", function() {
 
     });
 
-    it("will ibe parsed into correct information", function(done) {
+    it("will be parsed into correct information", function(done) {
 
         var node = zonar.create({name: "foo", payload: "bar baq baz"}); 
         node.start(function() {
@@ -34,6 +34,24 @@ describe("The messagess", function() {
         });
 
     });
+
+    it("will parse the payload as json if its json", function(done) {
+
+        var node = zonar.create({name: "foo", payload: { foo: "bar" }}); 
+        node.start(function() {
+
+            var message = node._private.createMessage("BAR");
+
+            var parsedMessage = node._private.parseMessage(message, { address: "1.2.3.4" });
+
+            parsedMessage.payload.should.have.property('foo', 'bar');
+
+            node.stop(done);
+
+        });
+
+    });
+ 
  
     
 });
