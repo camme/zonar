@@ -1,5 +1,5 @@
-var Hitta = require("../").Hitta;
-var node = new Hitta({id: "bar.service", port: 5778 });
-node.start();
+var zonar = require("../");
+var z = zonar.create({name: "bar.service", net: 'tjena'});
+z.start();
 
 
