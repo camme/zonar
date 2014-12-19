@@ -95,6 +95,56 @@ describe("The scanner part", function() {
 
     });
 
+    it("will not throw an error if a new service with a used name is started as a listener", function(done) {
+
+        var counter = 0;
+
+        var node1 = zonar.create({net: "test", name: "foo"}); 
+        var node2 = zonar.create({net: "test", name: "foo"}); 
+        var node3 = zonar.create({net: "test", name: "foo"}); 
+
+        var error = null;
+        node2.on('error', function(err) {
+            error = err;
+        });
+
+        var error2 = null;
+        node3.on('error', function(err) {
+            error3 = err;
+        });
+
+
+        node1.start();
+
+        // if we start them at exactly the same time, we get a strange reaction where
+        // both the first and second get the TAKEN error
+        setTimeout(function() {
+
+            node2.listen();
+
+            setTimeout(function() {
+
+                node3.listen();
+
+                setTimeout(function runTest() {
+                    node1.stop(function() {
+                        node2.stop(function() {
+                            node3.stop(function() {
+                                should.not.exist(error);
+                                should.not.exist(error2);
+                                done();
+                            });
+                        });
+                    });
+                }, 300);
+
+            }, 10);
+
+        }, 10);
+
+    });
+
+
     it("will throw an error if a new service with a used name is started", function(done) {
 
         var counter = 0;

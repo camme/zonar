@@ -8,6 +8,7 @@ describe("Create", function() {
         var error = null;
         try{
             var node = zonar.create({}); 
+            node.start();
         } catch (err) {
             error = err;
         }
@@ -15,6 +16,23 @@ describe("Create", function() {
         should.exist(error);
 
     });
+
+
+    it("will not fail if no name is provided and run in listen mode", function() {
+
+        var error = null;
+        try{
+            var node = zonar.create({}); 
+            node.listen();
+        } catch (err) {
+            error = err;
+        }
+
+        should.not.exist(error);
+
+    });
+
+
 
     it("takes the payload as json by default if the payload is an object", function(done) {
 
