@@ -189,3 +189,11 @@ Now you could create a zmq service that is discoverable like this:
         
     });
     
+## Missing features
+These are things that I will try to implement as soon as possible:
+
+* Create examples in examples folder
+* Custom heartbeat timer, so that each node can have a custom timer
+* Broadcast to all networks, ie if you have multiple networks it should send the broardcast to all of them (currently it just picks the first)
+* More tests
+* Better errors when something unexpected happems
